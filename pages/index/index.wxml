@@ -1,0 +1,49 @@
+<view class="container">
+  <view class="header">
+    <text class="title">俄罗斯方块</text>
+    <view class="score-panel">
+      <text class="score-label">得分: {{score}}</text>
+      <text class="level-label">等级: {{level}}</text>
+      <text class="lines-label">行数: {{lines}}</text>
+    </view>
+  </view>
+  
+  <view class="game-area">
+    <canvas 
+      class="game-canvas" 
+      canvas-id="gameCanvas"
+      bindtouchstart="onTouchStart"
+      bindtouchmove="onTouchMove"
+      bindtouchend="onTouchEnd"
+    ></canvas>
+    
+    <view class="next-panel">
+      <text class="next-label">下一个</text>
+      <canvas class="next-canvas" canvas-id="nextCanvas"></canvas>
+    </view>
+  </view>
+  
+  <view class="control-panel">
+    <view class="control-row">
+      <button class="control-btn" bindtap="rotate">↻ 旋转</button>
+      <button class="control-btn" bindtap="moveDown">↓ 下移</button>
+      <button class="control-btn" bindtap="drop">⏬ 到底</button>
+    </view>
+    <view class="control-row">
+      <button class="control-btn" bindtap="moveLeft">← 左移</button>
+      <button class="control-btn {{isPaused ? 'resume' : 'pause'}}" bindtap="togglePause">
+        {{isPaused ? '▶ 继续' : '⏸ 暂停'}}
+      </button>
+      <button class="control-btn" bindtap="moveRight">→ 右移</button>
+    </view>
+    <view class="control-row">
+      <button class="control-btn restart" bindtap="restart">🔄 重新开始</button>
+    </view>
+  </view>
+  
+  <view class="game-over {{showGameOver ? 'show' : ''}}" wx:if="{{showGameOver}}">
+    <text class="game-over-title">游戏结束</text>
+    <text class="game-over-score">最终得分: {{score}}</text>
+    <button class="restart-btn" bindtap="restart">再来一局</button>
+  </view>
+</view>

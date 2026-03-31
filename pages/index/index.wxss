@@ -1,0 +1,171 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60rpx 20rpx 40rpx;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #00d4ff;
+  text-shadow: 0 0 10rpx rgba(0, 212, 255, 0.5);
+}
+
+.score-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: white;
+  font-size: 28rpx;
+}
+
+.score-label, .level-label, .lines-label {
+  margin-bottom: 8rpx;
+}
+
+.game-area {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 30rpx;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.game-canvas {
+  width: 480rpx;
+  height: 800rpx;
+  border: 4rpx solid #00d4ff;
+  border-radius: 12rpx;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 20rpx rgba(0, 212, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.next-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.next-label {
+  color: white;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+}
+
+.next-canvas {
+  width: 200rpx;
+  height: 200rpx;
+  border: 3rpx solid #00d4ff;
+  border-radius: 8rpx;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.control-panel {
+  width: 100%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+
+.control-row {
+  display: flex;
+  justify-content: center;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.control-btn {
+  width: 160rpx;
+  height: 70rpx;
+  background-color: rgba(0, 212, 255, 0.2);
+  border: 2rpx solid #00d4ff;
+  color: white;
+  font-size: 24rpx;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.control-btn:active {
+  background-color: rgba(0, 212, 255, 0.5);
+}
+
+.control-btn.restart {
+  width: 340rpx;
+  background-color: rgba(255, 67, 54, 0.2);
+  border-color: #ff4336;
+}
+
+.control-btn.pause {
+  background-color: rgba(255, 193, 7, 0.2);
+  border-color: #ffc107;
+}
+
+.control-btn.resume {
+  background-color: rgba(76, 175, 80, 0.2);
+  border-color: #4caf50;
+}
+
+.game-over {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.game-over.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.game-over-title {
+  font-size: 72rpx;
+  font-weight: bold;
+  color: #ff4336;
+  text-shadow: 0 0 20rpx rgba(255, 67, 54, 0.7);
+  margin-bottom: 40rpx;
+}
+
+.game-over-score {
+  font-size: 36rpx;
+  color: white;
+  margin-bottom: 60rpx;
+}
+
+.restart-btn {
+  width: 300rpx;
+  height: 100rpx;
+  background-color: #00d4ff;
+  color: white;
+  font-size: 32rpx;
+  border: none;
+  border-radius: 16rpx;
+}
