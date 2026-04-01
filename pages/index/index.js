@@ -272,22 +272,27 @@ Page({
 
   // 绘制游戏界面
   drawGame() {
+    // 计算网格在canvas中的水平偏移，使其居中
+    const canvasWidth = 240; // 480rpx = 240px (标准设备下1rpx=0.5px)
+    const gridWidth = COLS * BLOCK_SIZE;
+    const xOffset = (canvasWidth - gridWidth) / 2; // 20px水平居中偏移
+
     // 清空画布
-    this.ctx.clearRect(0, 0, COLS * BLOCK_SIZE, ROWS * BLOCK_SIZE);
+    this.ctx.clearRect(0, 0, canvasWidth, ROWS * BLOCK_SIZE);
 
     // 绘制网格背景
     this.ctx.setStrokeStyle('rgba(255, 255, 255, 0.1)');
     this.ctx.setLineWidth(1);
     for (let i = 0; i <= COLS; i++) {
       this.ctx.beginPath();
-      this.ctx.moveTo(i * BLOCK_SIZE, 0);
-      this.ctx.lineTo(i * BLOCK_SIZE, ROWS * BLOCK_SIZE);
+      this.ctx.moveTo(xOffset + i * BLOCK_SIZE, 0);
+      this.ctx.lineTo(xOffset + i * BLOCK_SIZE, ROWS * BLOCK_SIZE);
       this.ctx.stroke();
     }
     for (let i = 0; i <= ROWS; i++) {
       this.ctx.beginPath();
-      this.ctx.moveTo(0, i * BLOCK_SIZE);
-      this.ctx.lineTo(COLS * BLOCK_SIZE, i * BLOCK_SIZE);
+      this.ctx.moveTo(xOffset, i * BLOCK_SIZE);
+      this.ctx.lineTo(xOffset + COLS * BLOCK_SIZE, i * BLOCK_SIZE);
       this.ctx.stroke();
     }
 
@@ -295,7 +300,7 @@ Page({
     for (let row = 0; row < ROWS; row++) {
       for (let col = 0; col < COLS; col++) {
         if (this.grid[row][col]) {
-          this.drawBlock(this.ctx, col, row, this.grid[row][col], BLOCK_SIZE);
+          this.drawBlock(this.ctx, col, row, this.grid[row][col], BLOCK_SIZE, xOffset);
         }
       }
     }
@@ -307,7 +312,7 @@ Page({
           const x = this.currentX + col;
           const y = this.currentY + row;
           if (y >= 0) {
-            this.drawBlock(this.ctx, x, y, this.currentColor, BLOCK_SIZE);
+            this.drawBlock(this.ctx, x, y, this.currentColor, BLOCK_SIZE, xOffset);
           }
         }
       }
