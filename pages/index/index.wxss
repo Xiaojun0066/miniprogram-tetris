@@ -87,22 +87,25 @@
 .control-row {
   display: flex;
   justify-content: center;
-  gap: 15rpx;
+  gap: 10rpx;
   margin-bottom: 20rpx;
 }
 
 .control-btn {
-  width: 140rpx;
+  width: 110rpx;
   height: 70rpx;
   background-color: rgba(0, 212, 255, 0.2);
   border: 2rpx solid #00d4ff;
   color: white;
-  font-size: 24rpx;
+  font-size: 20rpx;
   border-radius: 12rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
 }
 
 .control-btn:active {
@@ -110,7 +113,7 @@
 }
 
 .control-btn.restart {
-  width: 300rpx;
+  width: 250rpx;
   background-color: rgba(255, 67, 54, 0.2);
   border-color: #ff4336;
 }
