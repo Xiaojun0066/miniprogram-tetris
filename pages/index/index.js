@@ -1,5 +1,5 @@
-const COLS = 10;
-const ROWS = 20;
+const COLS = 13;
+const ROWS = 22;
 const BLOCK_SIZE = 20;
 const NEXT_BLOCK_SIZE = 18;
 
@@ -275,7 +275,7 @@ Page({
     // 计算网格在canvas中的水平偏移，使其居中
     const canvasWidth = 240; // 480rpx = 240px (标准设备下1rpx=0.5px)
     const gridWidth = COLS * BLOCK_SIZE;
-    const xOffset = (canvasWidth - gridWidth) / 2; // 20px水平居中偏移
+    const xOffset = 0; // 20px水平居中偏移
 
     // 清空画布
     this.ctx.clearRect(0, 0, canvasWidth, ROWS * BLOCK_SIZE);
