@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60rpx 20rpx 40rpx;
+  padding: 60rpx 10rpx 40rpx;
   box-sizing: border-box;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
@@ -80,19 +80,19 @@
 
 .control-panel {
   width: 100%;
-  padding: 0 40rpx;
+  padding: 0 20rpx;
   box-sizing: border-box;
 }
 
 .control-row {
   display: flex;
   justify-content: center;
-  gap: 20rpx;
+  gap: 15rpx;
   margin-bottom: 20rpx;
 }
 
 .control-btn {
-  width: 160rpx;
+  width: 140rpx;
   height: 70rpx;
   background-color: rgba(0, 212, 255, 0.2);
   border: 2rpx solid #00d4ff;
@@ -110,7 +110,7 @@
 }
 
 .control-btn.restart {
-  width: 340rpx;
+  width: 300rpx;
   background-color: rgba(255, 67, 54, 0.2);
   border-color: #ff4336;
 }
