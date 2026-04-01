@@ -14,8 +14,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 40rpx;
+  align-items: flex-start;
+  padding: 0 20rpx;
   margin-bottom: 30rpx;
   box-sizing: border-box;
 }
@@ -33,6 +33,7 @@
   align-items: flex-end;
   color: white;
   font-size: 28rpx;
+  margin-top: 15rpx;
 }
 
 .score-label, .level-label, .lines-label {
