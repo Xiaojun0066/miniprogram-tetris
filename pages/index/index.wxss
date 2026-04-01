@@ -16,6 +16,7 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 0 20rpx;
+  margin-top: 100rpx;
   margin-bottom: 30rpx;
   box-sizing: border-box;
 }
@@ -29,11 +30,12 @@
 
 .score-panel {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-end;
   color: white;
   font-size: 28rpx;
   margin-top: 15rpx;
+  gap: 15rpx;
 }
 
 .score-label, .level-label, .lines-label {
@@ -72,8 +74,8 @@
 }
 
 .next-canvas {
-  width: 200rpx;
-  height: 200rpx;
+  width: 160rpx;
+  height: 160rpx;
   border: 3rpx solid #00d4ff;
   border-radius: 8rpx;
   background-color: rgba(0, 0, 0, 0.7);
@@ -90,10 +92,13 @@
   justify-content: center;
   gap: 10rpx;
   margin-bottom: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .control-btn {
-  width: 110rpx;
+  width: 30vw;
+  max-width: 180rpx;
   height: 70rpx;
   background-color: rgba(0, 212, 255, 0.2);
   border: 2rpx solid #00d4ff;
@@ -104,8 +109,6 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 0 !important;
-  margin: 0 !important;
   box-sizing: border-box;
 }
 
@@ -114,7 +117,8 @@
 }
 
 .control-btn.restart {
-  width: 250rpx;
+  width: 50vw;
+  max-width: 250rpx;
   background-color: rgba(255, 67, 54, 0.2);
   border-color: #ff4336;
 }
